@@ -1,12 +1,11 @@
 package tech.angelofdiasg.contas;
 
 public class ContaEspecial extends Conta {
-	double limite;
+	private double limite;
 	
-	boolean sacar(double valor) {
-		if (this.saldo > valor && valor > 0) {
-			double novoSaldo = this.saldo - (valor * 0.90);
-			this.saldo = novoSaldo;
+	public boolean sacar(double valor) {
+		if (getSaldo() > valor && valor > 0) {
+			super.sacar(valor * 0.90);
 			System.out.println("Valor R$" + valor + " "
 					+ "sacado com sucesso.");
 			return true;
@@ -30,8 +29,13 @@ public class ContaEspecial extends Conta {
 		super(numero, saldo);
 		this.limite = limite;
 	}
-	
-	
-	
+
+	public double getLimite() {
+		return limite;
+	}
+
+	public void setLimite(double limite) {
+		this.limite = limite;
+	}	
 
 }

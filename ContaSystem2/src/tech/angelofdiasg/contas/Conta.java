@@ -1,10 +1,10 @@
 package tech.angelofdiasg.contas;
 
 public class Conta {
-	int numero;
-	double saldo;
+	private int numero;
+	private double saldo;
 	
-	boolean sacar(double valor) {
+	public boolean sacar(double valor) {
 		if (this.saldo > valor && valor > 0) {
 			double novoSaldo = this.saldo - valor;
 			this.saldo = novoSaldo;
@@ -18,7 +18,7 @@ public class Conta {
 		}
 	}
 	
-	boolean depositar(double valor) {
+	public boolean depositar(double valor) {
 		if (valor >= 0) {
 			this.saldo = this.saldo + valor;
 			System.out.println("Valor R$" + valor + " "
@@ -29,10 +29,6 @@ public class Conta {
 					+ " depositados!");
 			return false;
 		}
-	}
-	
-	double getSaldo() {
-		return this.saldo;
 	}
 
 	public Conta(int numero, double saldo) {
@@ -49,7 +45,17 @@ public class Conta {
 		System.out.println("Caracteristicas de conta vazia criadas!");
 		
 	}
-	
-	
+
+	public int getNumero() {
+		return numero;
+	}
+
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+
+	public double getSaldo() {
+		return saldo;
+	}
 
 }
