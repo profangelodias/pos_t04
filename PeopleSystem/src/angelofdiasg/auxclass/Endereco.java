@@ -1,4 +1,4 @@
-package tech.angelofdiasg.composicao;
+package tech.angelofdiasg.auxclass;
 
 import java.util.Scanner;
 
@@ -9,6 +9,7 @@ public class Endereco {
 	    private String cidade;
 	    private String estado;
 	    private String pais;
+
 	    private Scanner leitor = new Scanner(System.in);
 
 		public String getRua() {
@@ -73,6 +74,16 @@ public class Endereco {
 			System.out.println("Informe a País: ");
 			this.pais = leitor.nextLine();
 		}
-	    
-	    
+
+
+	public String toString() {
+		return "Endereco{" +
+				"pais='" + pais + '\'' +
+				", estado='" + estado + '\'' +
+				", cidade='" + cidade + '\'' +
+				", cep='" + cep + '\'' +
+				", numero='" + numero + '\'' +
+				", rua='" + rua + '\'' +
+				'}';
+	}
 }
