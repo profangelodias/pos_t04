@@ -17,8 +17,7 @@ public class App {
 		while (running) {
 			System.out.println("===== MENU PRINCIPAL =====");
 			System.out.println("1. Cadastrar NOVO Cliente");
-			System.out.println("2. Cadastrar Funcionário");
-			System.out.println("4. Alterar funcionário Funcionário");
+			System.out.println("2. Cadastrar NOVO Funcionário");
 			System.out.println("3. Sair");
 			System.out.print("Escolha uma opção: ");
 
@@ -35,9 +34,6 @@ public class App {
 					System.out.println("Saindo...");
 					running = false;
 					break;
-				case "4":
-					promoverFuncionario();
-					break;
 				default:
 					System.out.println("Opção inválida. Tente novamente.");
 					break;
@@ -52,10 +48,6 @@ public class App {
 		System.out.println("Cadastro de Cliente:");
 		Cliente cliente = new Cliente();
 		cliente.cadastrar();
-		//Lista de clientes
-		//Adicionar a lista de clientes
-		//Lista de clientes > pesquisar cliente por cliente quais telefones eles tem
-		//para encontrar um telefone específico
 		System.out.println("Dados cadastrados: " + cliente);
 	}
 
@@ -63,21 +55,6 @@ public class App {
 		System.out.println("Cadastro de Funcionário:");
 		Funcionario funcionario = new Funcionario();
 		funcionario.cadastrar();
-		System.out.println(funcionario);
-	}
-
-	public static void promoverFuncionario() {
-		System.out.println("Promover Funcionário:");
-		Funcionario funcionario = new Funcionario();
-		System.out.println("Deseja alterar o cardgo do funcionário:");
-		Cargo cargo = new Cargo();
-		cargo.setNome("Dev");
-		funcionario.promover(cargo);
-		System.out.println("Deseja alterar o salário do funcionário:");
-		System.out.println("Informe o percentual");
-		double perc = 0;
-		funcionario.reajustarSalario(perc);
-		System.out.println(funcionario);
 		System.out.println(funcionario);
 	}
 

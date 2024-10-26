@@ -29,9 +29,22 @@ public class Pessoa {
 		System.out.println("Informe o ano: ");
 		int ano = leitor.nextInt();
 		this.dataNascimento = LocalDate.of(ano, mes, dia);
-		System.out.println("Informe o tel Contato: ");
-		telsContato = new Telefone();
-		this.telsContato.cadastrar();
+		telsContato = new ListaDeTelefonesNaoOrdenados();
+		for(int i = 0; i < telsContato.getCapacidadePadrao(); i++) {
+			System.out.println("Deseja cadastar um telefone: ");
+			System.out.println("1 - Sim");
+			System.out.println("2 - Não");
+			int tel = leitor.nextInt();
+			if(tel == 1) {
+				System.out.println("Informe os dados do telefone: ");
+				Telefone tele = new Telefone();
+				tele.cadastrar();
+				telsContato.adicionarTelefone(tele);
+				System.out.println();
+			}else {
+				break;
+			}
+		}
 		System.out.println("Deseja cadastra o endereço: ");
 		System.out.println("1 - Sim");
 		System.out.println("2 - Não");
